@@ -10,18 +10,15 @@ import useStyles from './styles';
 function DateRange() {
   const classes = useStyles();
   let [dateRangeStates, setDateRangeStates] = useState({
-    isDropdownOpen: false,
     startDate: 'startDate',
     endDate: 'endDate',
     anchorEl: null,
   });
-  // let isDropdownOpen = useState(false);
 
   function toggleDropdown(e) {
     setDateRangeStates((currentState) =>
       ({
         ...currentState,
-        isDropdownOpen: false,
         anchorEl: !!currentState.anchorEl ? null : e.currentTarget,
       }));
   }

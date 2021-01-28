@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import { Popover, Box } from '@material-ui/core';
+import DatePicker from '../datePicker';
+import ButtonGroup from '../buttonGroup'
 
 function RangeSelector({ anchorEl, onRangeChange, onClose }) {
-  console.log('isOpen', anchorEl);
   return (
     <Popover
       open={!!anchorEl}
@@ -18,8 +19,10 @@ function RangeSelector({ anchorEl, onRangeChange, onClose }) {
         horizontal: 'center',
       }}
     >
-      <Box height={100} width={100}>
-        wow
+      <Box display="flex" height={250} width={520}>
+        <DatePicker />
+        <DatePicker />
+        <ButtonGroup />
       </Box>
     </Popover>
   )
