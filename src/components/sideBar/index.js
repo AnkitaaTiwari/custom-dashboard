@@ -11,7 +11,7 @@ import {
   SettingsOutlined,
   Add as AddIcon, 
 } from '@material-ui/icons';
-import { Box, Typography, Drawer, Tabs, Tab, List, ListItem, ListItemText } from '@material-ui/core';
+import { Box, Typography, Drawer, Tabs, Tab } from '@material-ui/core';
 import useStyles from './styles';
 import CustomTab from './customTab';
 
@@ -125,7 +125,6 @@ function SideBar() {
           <Box>
             <Tabs
               orientation="vertical"
-              value={0}
               indicatorColor="primary"
               variant="fullWidth"
               TabIndicatorProps={{

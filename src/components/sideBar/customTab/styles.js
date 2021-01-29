@@ -1,16 +1,5 @@
 import { makeStyles, createStyles} from '@material-ui/core/styles';
 
-function getBackground(props, theme) {
-  console.log('propsssss', props);
-  if (props.isActive) {
-    return theme.palette.primary.light; 
-  } else if (props.isHovered) {
-    console.log('insie');
-    return theme.palette.primary.main; 
-  }
-  return 'none';
-}
-
 const useStyles = makeStyles((theme) => {
   return createStyles({
     container: {

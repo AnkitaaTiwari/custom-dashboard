@@ -1,18 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-import { useTheme } from '@material-ui/core/styles';
-import { Box, Typography, Drawer, Tabs, Tab, List, ListItem, ListItemText } from '@material-ui/core';
+import { Box, Tab } from '@material-ui/core';
 import useStyles from './styles';
 
 function CustomTab(props) {
-  // const theme = useTheme();
   const { tabData } = props;
-
-  // let backgroundColor = { background: 'none' };
-  // if (isActive) {
-  //   backgroundColor = theme 
-  // } else if (isHovered) {}
 
   const classes = useStyles(props);
   return (
