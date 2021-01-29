@@ -1,81 +1,151 @@
 import React from 'react';
-
-import { DesktopWindows, WorkOutline, FileCopyOutlined } from '@material-ui/icons';
+import { useTheme } from '@material-ui/core/styles';
+import {
+  DesktopWindowsOutlined,
+  AllInboxOutlined,
+  WorkOutline,
+  FileCopyOutlined,
+  ViewCompactOutlined,
+  MarkunreadMailboxOutlined,
+  ArrowRightAlt,
+  SettingsOutlined,
+  Add as AddIcon, 
+} from '@material-ui/icons';
 import { Box, Typography, Drawer, Tabs, Tab, List, ListItem, ListItemText } from '@material-ui/core';
 import useStyles from './styles';
+import CustomTab from './customTab';
 
-const menu = [
+const menuItems = [
   {
     label: 'Menu Option 1',
-    icon: <DesktopWindows />,
+    icon: <DesktopWindowsOutlined />,
   },
   {
     label: 'Menu Option 2',
-    id: <WorkOutline />,
+    icon: <WorkOutline />,
+    rightIcon: <AddIcon />,
   }, 
   {
     label: 'Menu Option 3',
-    id: 'menu-option-3'
+    icon: <AllInboxOutlined />,
+    rightIcon: <AddIcon />,
   },
   {
     label: 'Menu Option 4',
-    id: 'menu-option-4'
+    icon: <ViewCompactOutlined />,
   },
   {
     label: 'Menu Option 5',
-    id: 'menu-option-5'
+    icon: <MarkunreadMailboxOutlined />,
+    rightIcon: <ArrowRightAlt />,
   },
   {
     label: 'Menu Option 6',
     icon: <FileCopyOutlined />,
+    
   },
 ];
 
+const settingsSize = 80;
 
-// {
-//   label: 'Menu Option 7',
-//   id: 'menu-option-7'
-// },
-// {
-//   label: 'Settings',
-//   id: 'settings'
-// },
-
-function Sidebar() {
+function SideBar() {
+  const theme = useTheme();
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
+    console.log('handleChange', newValue);
     setValue(newValue);
   };
+  
+  function renderTab(item, key) {
+    return (
+      <Tab
+        disableRipple
+        className={classes.tab}
+        isActive={key === value}
+        label={(
+          <Box className={classes.tabContent}>
+            <Box className={classes.labelContainer}>
+              <Box className={classes.iconContainer}>
+                {item.icon}
+              </Box>
+              <Box className={classes.label}>
+                {item.label}
+              </Box>
+            </Box>
+            <Box className={classes.iconContainer}>
+              {item.rightIcon}
+            </Box>
+          </Box>
+        )}
+      />
+    );
+  }
 
   return (
-    <Drawer variant="permanent" anchor="left" >
+    <Drawer variant="permanent" anchor="left">
       <Box className={classes.container}>
-        <Box className={classes.title} titlecomponent="href">
-          <Typography color="primary" variant="h5">
-            LOGO HERE
-          </Typography>
+        <Box width="100%">
+          <Box className={classes.title} titlecomponent="href">
+            <Typography color="primary" variant="h5">
+              LOGO HERE
+            </Typography>
+          </Box>
+          <Tabs
+            orientation="vertical"
+            value={value}
+            onChange={handleChange}
+            indicatorColor="primary"
+            variant="fullWidth"
+          >
+            {
+              menuItems.map(renderTab)
+            }
+          </Tabs>
         </Box>
-        <Tabs
-          orientation="vertical"
-          value={value}
-          onChange={handleChange}
-          indicatorColor="primary"
-          variant="fullWidth"
-        >
-          {
-            menu.map((menu) => {
-              console.log('menu', menu);
-              return ( 
-                <Tab label={menu.label} key={menu.label} />
-              )
-            })
-          }
-        </Tabs>
+        <Box width="100%" display='flex' flexDirection='column' justifyContent='space-between'>
+          <Box mb={0.5}>
+            <Tabs
+              orientation="vertical"
+              indicatorColor="primary"
+              variant="fullWidth"
+            >
+              <CustomTab
+                background={theme.palette.primary.main}
+                color="white"
+                tabData={{
+                  label: 'Menu Option 7',
+                  icon: <MarkunreadMailboxOutlined />,
+                  rightIcon: <ArrowRightAlt />,
+                }}
+              />
+            </Tabs>
+          </Box>
+          <Box>
+            <Tabs
+              orientation="vertical"
+              value={0}
+              indicatorColor="primary"
+              variant="fullWidth"
+              TabIndicatorProps={{
+                height: settingsSize
+              }}
+            >
+              <CustomTab
+                height={settingsSize}
+                background={theme.palette.primary.light}
+                tabData={{
+                  label: 'Settings',
+                  icon: <SettingsOutlined />,
+                }}
+              />
+            </Tabs>
+          </Box>
+        </Box>
       </Box>
     </Drawer>
   )
 }
 
-export default Sidebar;
+export default SideBar;
