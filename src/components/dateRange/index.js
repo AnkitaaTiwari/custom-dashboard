@@ -30,8 +30,9 @@ function DateRange() {
   console.log('dateRangeStates', dateRangeStates);
 
   return (
-    <Box mt={2} display="flex" flexDirection="column" justifyContent="center">
+    <Box display="flex" flexDirection="column" justifyContent="center">
       <TextField
+        size="small"
         variant="outlined"
         InputProps={{
           endAdornment: (
@@ -40,7 +41,7 @@ function DateRange() {
             </InputAdornment>
           ),
           }}
-        value="Tueksjdcij"
+        value="Tue, Aug 29, 2020 - Wed, Aug 30, 2020"
         onClick={toggleDropdown}
       />
       <RangeSelector

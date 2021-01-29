@@ -10,10 +10,9 @@ import {
 } from '@material-ui/icons';
 
 import AttributeCard from '../../components/attributeCard';
-import GraphSection from '../../components/graphSection';
+import AnalyticsSection from '../../components/analyticsSection';
 import Footer from '../../components/footer';
 import useStyles from './styles';
-import DateRange from '../../components/dateRange';
 
 const attributeList = [
   {
@@ -44,32 +43,32 @@ function Home() {
   
   return (
     <Box className={classes.homeContent}>
-      <Box mt={2} display='flex' justifyContent='flex-end'>
-        <Button
-          type="button"
-          variant="contained" 
-          color="primary"
-          borderRadius='25px'
-          className={classes.button}
-        >
-          Upgrade
-        </Button>
-      </Box>
-      <Box mt={2} display="flex" justifyContent="space-between">
-        {
-          attributeList.map((attribute) => (
-            <AttributeCard
-              key={attribute.title}
-              icon={attribute.icon}
-              title={attribute.title}
-              subtitle={attribute.subtitle}
-            />
-          ))
-        }
-      </Box>
-      <Box mt={2}>
-        <GraphSection />
-        <DateRange />
+      <Box>
+        <Box display='flex' justifyContent='flex-end'>
+          <Button
+            type="button"
+            variant="contained" 
+            color="primary"
+            className={classes.button}
+          >
+            Upgrade
+          </Button>
+        </Box>
+        <Box mt={2} display="flex" justifyContent="space-between">
+          {
+            attributeList.map((attribute) => (
+              <AttributeCard
+                key={attribute.title}
+                icon={attribute.icon}
+                title={attribute.title}
+                subtitle={attribute.subtitle}
+              />
+            ))
+          }
+        </Box>
+        <Box mt={2} mb={4}>
+          <AnalyticsSection />
+        </Box>
       </Box>
       <Footer />
     </Box>

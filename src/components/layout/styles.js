@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme) => {
   return createStyles({
     content: {
       background: '#F5F6F8',
-      height: 'calc(100vh - 76px)',
+      height: 'calc(100vh - 4.75rem)',
     }
   });
 })

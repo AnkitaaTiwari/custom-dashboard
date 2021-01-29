@@ -6,11 +6,13 @@ function Footer() {
   const classes = useStyles();
 
   return (
-    <Box>
+    <Box className={classes.footerContainer}>
       <Divider variant="fullWidth" />
-      <Typography variant="body2" className={classes.subtext}>
-        @ Copyright -  Dummy Design 2020 All Rights Reserved
-      </Typography>
+      <Box className={classes.subtextContainer}>
+        <Typography variant="body2" className={classes.subtext}>
+            @ Copyright -  Dummy Design 2020 All Rights Reserved
+        </Typography>
+      </Box>
     </Box>
   )
 }

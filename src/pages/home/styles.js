@@ -4,7 +4,10 @@ const useStyles = makeStyles((theme) => {
   return createStyles({
     homeContent: {
       margin: theme.spacing(2, 4, 0),
-      height: 'calc(100% - 16px)',
+      height: 'calc(100% - 1rem)',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
     },
     button: {
       borderRadius: theme.spacing(200),
