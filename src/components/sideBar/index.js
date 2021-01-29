@@ -130,6 +130,7 @@ function SideBar() {
               TabIndicatorProps={{
                 height: settingsSize
               }}
+              value={0}
             >
               <CustomTab
                 height={settingsSize}

@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      height: theme.spacing(10.5),
+      height: theme.spacing(9.5),
       justifyContent: 'center',
     },
     tab: {

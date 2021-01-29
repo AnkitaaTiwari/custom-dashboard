@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => {
     subtext: {
       color: 'gray',
       marginTop: theme.spacing(-0.5),
-      fontSize: 'x-small'
+      fontSize: theme.spacing(1.375),
     }
   });
 })

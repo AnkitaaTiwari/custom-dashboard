@@ -19,22 +19,22 @@ const attributeList = [
   {
     title: '245/500',
     subtitle: 'Attribute 1',
-    icon: <DataUsageOutlined />
+    icon: <DataUsageOutlined fontSize='inherit' color="primary" />
   },
   {
     title: '120',
     subtitle: 'Attribute 2',
-    icon: <SecurityOutlined />
+    icon: <SecurityOutlined fontSize='inherit' color="primary" />
   },
   {
     title: '125',
     subtitle: 'Attribute 3',
-    icon: <ListAltOutlined />
+    icon: <ListAltOutlined fontSize='inherit' color="primary" />
   },
   {
     title: '0',
     subtitle: 'Attribute 4',
-    icon: <FindInPageOutlined />
+    icon: <FindInPageOutlined fontSize='inherit' color="primary" />
   },
 ]
 
@@ -43,13 +43,14 @@ function Home() {
   const theme = useTheme();
   
   return (
-    <Box className={classes.content}>
+    <Box className={classes.homeContent}>
       <Box mt={2} display='flex' justifyContent='flex-end'>
         <Button
           type="button"
           variant="contained" 
           color="primary"
           borderRadius='25px'
+          className={classes.button}
         >
           Upgrade
         </Button>

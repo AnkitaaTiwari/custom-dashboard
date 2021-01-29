@@ -8,14 +8,17 @@ const useStyles = makeStyles((theme) => {
     },
     avatar: {
       marginRight: theme.spacing(1),
+      width: theme.spacing(4),
+      height: theme.spacing(4),
+      fontSize: 'small',
     },
     userName: {
       fontWeight: 600,
-      fontSize: 'small',
+      fontSize: theme.spacing(1.5),
     },
     subtext: {
       color: 'gray',
-      fontSize: 'small',
+      fontSize: theme.spacing(1.375),
       marginTop: theme.spacing(-0.5),
     }
   });

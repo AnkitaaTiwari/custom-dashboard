@@ -13,7 +13,7 @@ function Layout({ children }) {
     <Box display="flex" flexDirection="column" justifyContent="center">
       <SideBar />
       <TopBar />
-      <Box className={classes.content} ml={30} mt={10.5}>
+      <Box className={classes.content} ml={30} mt={9.5}>
         {children}
       </Box>
     </Box>
