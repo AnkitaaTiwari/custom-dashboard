@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Card, Typography } from '@material-ui/core';
+import { Box, Card, Divider, Typography } from '@material-ui/core';
 import DateRange from '../dateRange';
 import StatisticsText from './statisticsText';
 import useStyles from './styles';
@@ -31,7 +31,7 @@ function AnalyticsSection() {
       <Box className={classes.content}>
         <Box className={classes.titleContainer}>
           <Box className={classes.titleWrapper}>
-            <Typography variant="h6">
+            <Typography className={classes.title} variant="subtitle1">
               Analytics
             </Typography>
           </Box>
@@ -41,8 +41,13 @@ function AnalyticsSection() {
         </Box>
         <Box className={classes.statisticsContainer}>
           {
-            statistics.map((record) => (
-              <StatisticsText key={record.name} numbers={record.numbers} name={record.name} />    
+            statistics.map((record, key) => (
+              <Box className={classes.statisticsWrapper}>
+                <StatisticsText key={record.name} numbers={record.numbers} name={record.name} />
+                {(key < statistics.length - 1) && (
+                  <Divider className={classes.divider} orientation='vertical' />
+                )}
+              </Box>
             ))
           }
         </Box>

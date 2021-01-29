@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => {
     subtext: {
       color: 'gray',
       textTransform: 'uppercase',
-      fontSize: theme.spacing(1.375),
+      fontSize: theme.spacing(1.2),
       marginTop: theme.spacing(-0.5),
     }
   });

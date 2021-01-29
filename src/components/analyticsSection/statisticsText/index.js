@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Card, Typography } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 import useStyles from './styles';
 
 function StatisticsText({ numbers, name }) {
   const classes = useStyles();
 
   return (
-    <Box display="flex">
-      <Typography>
+    <Box className={classes.container}>
+      <Typography className={classes.numbers} variant="subtitle1">
         {numbers}
       </Typography>
-      <Typography>
+      <Typography className={classes.name} variant="body2">
         {name}
       </Typography>
     </Box>

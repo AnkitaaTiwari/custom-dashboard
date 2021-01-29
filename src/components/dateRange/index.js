@@ -36,7 +36,7 @@ function DateRange() {
         variant="outlined"
         InputProps={{
           endAdornment: (
-            <InputAdornment position="start">
+            <InputAdornment className={classes.dateContainer} position="start">
               <DateRangeIcon />
             </InputAdornment>
           ),

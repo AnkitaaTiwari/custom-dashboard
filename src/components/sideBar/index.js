@@ -18,30 +18,30 @@ import CustomTab from './customTab';
 const menuItems = [
   {
     label: 'Menu Option 1',
-    icon: <DesktopWindowsOutlined />,
+    icon: <DesktopWindowsOutlined fontSize="small" />,
   },
   {
     label: 'Menu Option 2',
-    icon: <WorkOutline />,
-    rightIcon: <AddIcon />,
+    icon: <WorkOutline fontSize="small" />,
+    rightIcon: <AddIcon fontSize="small" />,
   }, 
   {
     label: 'Menu Option 3',
-    icon: <AllInboxOutlined />,
-    rightIcon: <AddIcon />,
+    icon: <AllInboxOutlined fontSize="small" />,
+    rightIcon: <AddIcon fontSize="small" />,
   },
   {
     label: 'Menu Option 4',
-    icon: <ViewCompactOutlined />,
+    icon: <ViewCompactOutlined fontSize="small" />,
   },
   {
     label: 'Menu Option 5',
-    icon: <MarkunreadMailboxOutlined />,
-    rightIcon: <ArrowRightAlt />,
+    icon: <MarkunreadMailboxOutlined fontSize="small" />,
+    rightIcon: <ArrowRightAlt fontSize="small" />,
   },
   {
     label: 'Menu Option 6',
-    icon: <FileCopyOutlined />,
+    icon: <FileCopyOutlined fontSize="small" />,
     
   },
 ];
@@ -116,8 +116,8 @@ function SideBar() {
                 color="white"
                 tabData={{
                   label: 'Menu Option 7',
-                  icon: <MarkunreadMailboxOutlined />,
-                  rightIcon: <ArrowRightAlt />,
+                  icon: <MarkunreadMailboxOutlined fontSize="small" />,
+                  rightIcon: <ArrowRightAlt fontSize="small" />,
                 }}
               />
             </Tabs>
@@ -137,7 +137,7 @@ function SideBar() {
                 background={theme.palette.primary.light}
                 tabData={{
                   label: 'Settings',
-                  icon: <SettingsOutlined />,
+                  icon: <SettingsOutlined fontSize="small" />,
                 }}
               />
             </Tabs>

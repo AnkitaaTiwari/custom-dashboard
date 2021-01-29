@@ -36,13 +36,10 @@ const useStyles = makeStyles((theme) => {
       textTransform: 'none',
     },
     iconContainer: {
-      fontSize: 'small',
+      fontSize: 'x-small',
       margin: theme.spacing(1),
       height: theme.spacing(3)
     },
-    drawerPaper: {
-
-    }
   });
 })
 
