@@ -2,7 +2,9 @@ import React from 'react';
 import { Box, Card, Divider, Typography } from '@material-ui/core';
 import DateRange from '../dateRange';
 import StatisticsText from './statisticsText';
+import Graph from '../graph';
 import useStyles from './styles';
+import data from './data';
 
 const statistics = [
   {
@@ -52,7 +54,7 @@ function AnalyticsSection() {
           }
         </Box>
         <Box className={classes.graphContainer}>
-          Graph
+          <Graph data={data} />
         </Box>
       </Box>
     </Card>
