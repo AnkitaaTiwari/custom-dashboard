@@ -40,6 +40,6 @@ const useStyles = makeStyles((theme) => {
       height: theme.spacing(3)
     },
   });
-})
+});
 
 export default useStyles;

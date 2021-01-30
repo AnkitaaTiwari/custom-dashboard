@@ -16,7 +16,7 @@ function Graph({ data }) {
 
   return (
     <Box>
-      <ResponsiveContainer height="100%" aspect={4.0/1.25}>
+      <ResponsiveContainer height="100%" aspect={4.0/1}>
         <LineChart
           width={500}
           height={300}

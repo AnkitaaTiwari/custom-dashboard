@@ -1,60 +1,58 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React, { useRef, useState } from 'react';
+import jQuery from 'jquery';
+import moment from 'moment';
+import DateRangePicker from 'react-bootstrap-daterangepicker';
 
-import { DateRange as DateRangeIcon } from '@material-ui/icons';
-import { Box, TextField, InputAdornment, Typography } from '@material-ui/core';
-import RangeSelector from './rangeSelector';
+// import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap-daterangepicker/daterangepicker.css';
 import useStyles from './styles';
 
-function DateRange() {
-  const classes = useStyles();
-  let [dateRangeStates, setDateRangeStates] = useState({
-    startDate: 'startDate',
-    endDate: 'endDate',
-    anchorEl: null,
+window.jQuery = window.$ = jQuery;
+
+function Footer() {
+  const keyRef = useRef(Date.now());
+  const [dates, setDates] = useState({
+    startDate: moment('2020/03/01'),
+    endDate: moment('2020/03/15'),
   });
-
-  function toggleDropdown(e) {
-    setDateRangeStates((currentState) =>
-      ({
-        ...currentState,
-        anchorEl: !!currentState.anchorEl ? null : e.currentTarget,
-      }));
-  }
-
-  function handleRangeChange() {
-    console.log('handleRangeChange');
-  }
-
-  console.log('dateRangeStates', dateRangeStates);
+  const [ranges, setRanges] = useState({
+    ['First Range']: [
+      moment().subtract(2, 'days'),
+      moment().add(2, 'days'),
+    ],
+  });
+  const handleApply = (event, picker) => {
+    setDates({
+      startDate: picker.startDate,
+      endDate: picker.endDate,
+    });
+  };
+  const randomNumber = () => Math.floor(Math.random() * 20) + 1;
+  const handleChangeRanges = () => {
+    keyRef.current = Date.now();
+    setRanges({
+      [`Range ${Date.now()}`]: [
+        moment().subtract(randomNumber(), 'days').startOf('day'),
+        moment().add(randomNumber(), 'days').startOf('day'),
+      ],
+    });
+  };
 
   return (
-    <Box display="flex" flexDirection="column" justifyContent="center">
-      <TextField
-        size="small"
-        variant="outlined"
-        InputProps={{
-          endAdornment: (
-            <InputAdornment className={classes.dateContainer} position="start">
-              <DateRangeIcon />
-            </InputAdornment>
-          ),
-          }}
-        value="Tue, Aug 29, 2020 - Wed, Aug 30, 2020"
-        onClick={toggleDropdown}
-      />
-      <RangeSelector
-        anchorEl={dateRangeStates.anchorEl}
-        onRangeChange={handleRangeChange}
-        onClose={toggleDropdown}
-      />
-    </Box>
-  );
+    <DateRangePicker
+      key={keyRef.current}
+      onApply={handleApply}
+      onCancel={() => {}}
+      onEvent={() => {}}
+      onHide={() => {}}
+      onHideCalendar={() => {}}
+      onShow={() => {}}
+      onShowCalendar={() => {}}
+      initialSettings={{ ranges }}
+    >
+      <input type="text" className="form-control col-4" />
+    </DateRangePicker>
+  )
 }
 
-DateRange.propTypes = {
-  onSelect: PropTypes.func.isRequired,
-};
-
-export default DateRange;
+export default Footer;
