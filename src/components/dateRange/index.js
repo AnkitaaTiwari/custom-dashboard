@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import jQuery from 'jquery';
 import moment from 'moment';
+import 'bootstrap/dist/css/bootstrap.css';	
+import 'bootstrap-daterangepicker/daterangepicker.css';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
 
 window.jQuery = window.$ = jQuery;
