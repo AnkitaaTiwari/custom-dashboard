@@ -53,16 +53,15 @@ function SideBar() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
-    console.log('handleChange', newValue);
     setValue(newValue);
   };
   
-  function renderTab(item, key) {
+  function renderTab(item) {
     return (
       <Tab
+        key={item.label}
         disableRipple
         className={classes.tab}
-        isActive={key === value}
         label={(
           <Box className={classes.tabContent}>
             <Box className={classes.labelContainer}>

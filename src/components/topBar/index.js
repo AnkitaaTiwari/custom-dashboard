@@ -7,9 +7,9 @@ function TopBar() {
   const classes = useStyles();
 
   return (
-    <AppBar color='white' position='fixed'>
+    <AppBar color="inherit" position='fixed'>
       <Box mr={1} display='flex' flexDirection='row' justifyContent='flex-end'>
-        <Divider orientation='vertical' variant='fullWidth' flexItem light='true' />
+        <Divider orientation='vertical' variant='fullWidth' flexItem light />
         <Button className={classes.button}>
           <Avatar
             className={classes.avatar}

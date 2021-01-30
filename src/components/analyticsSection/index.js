@@ -57,8 +57,8 @@ function AnalyticsSection() {
         <Box className={classes.statisticsContainer}>
           {
             statistics.map((record, key) => (
-              <Box className={classes.statisticsWrapper}>
-                <StatisticsText key={record.name} numbers={record.numbers} name={record.name} />
+              <Box key={record.name} className={classes.statisticsWrapper}>
+                <StatisticsText numbers={record.numbers} name={record.name} />
                 {(key < statistics.length - 1) && (
                   <Divider className={classes.divider} orientation='vertical' />
                 )}
