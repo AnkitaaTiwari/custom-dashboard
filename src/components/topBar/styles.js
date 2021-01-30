@@ -22,6 +22,6 @@ const useStyles = makeStyles((theme) => {
       marginTop: theme.spacing(-0.5),
     }
   });
-})
+});
 
 export default useStyles;

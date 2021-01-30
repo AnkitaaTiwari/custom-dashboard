@@ -2,7 +2,6 @@ import { makeStyles, createStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => {
   return createStyles({
-
     container: {
       display: 'flex',
       flexDirection: 'column',
@@ -38,9 +37,9 @@ const useStyles = makeStyles((theme) => {
     iconContainer: {
       fontSize: 'x-small',
       margin: theme.spacing(1),
-      height: theme.spacing(3)
+      height: theme.spacing(3),
     },
   });
-})
+});
 
 export default useStyles;

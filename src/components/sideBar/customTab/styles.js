@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => {
     },
     iconContainer: {
       margin: theme.spacing(1),
-      height: theme.spacing(3)
+      height: theme.spacing(3),
     },
   });
 });

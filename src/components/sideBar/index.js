@@ -42,7 +42,6 @@ const menuItems = [
   {
     label: 'Menu Option 6',
     icon: <FileCopyOutlined fontSize="small" />,
-    
   },
 ];
 
@@ -145,7 +144,7 @@ function SideBar() {
         </Box>
       </Box>
     </Drawer>
-  )
+  );
 }
 
 export default SideBar;

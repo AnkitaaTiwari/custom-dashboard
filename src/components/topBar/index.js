@@ -31,7 +31,7 @@ function TopBar() {
         </Button>
       </Box>
     </AppBar>
-  )
+  );
 }
 
 export default TopBar;

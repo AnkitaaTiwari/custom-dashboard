@@ -10,11 +10,11 @@ function Footer() {
       <Divider variant="fullWidth" />
       <Box className={classes.subtextContainer}>
         <Typography variant="body2" className={classes.subtext}>
-            @ Copyright -  Dummy Design 2020 All Rights Reserved
+          @ Copyright -  Dummy Design 2020 All Rights Reserved
         </Typography>
       </Box>
     </Box>
-  )
+  );
 }
 
 export default Footer;
