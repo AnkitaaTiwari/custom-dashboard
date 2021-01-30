@@ -18,6 +18,6 @@ const useStyles = makeStyles((theme) => {
       alignItems: 'center',
     },
   });
-})
+});
 
 export default useStyles;

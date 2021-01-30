@@ -15,12 +15,12 @@ function StatisticsText({ numbers, name }) {
         {name}
       </Typography>
     </Box>
-  )
+  );
 }
 
 StatisticsText.propTypes = {
   numbers: PropTypes.string,
   name: PropTypes.string,
-}
+};
 
 export default StatisticsText;

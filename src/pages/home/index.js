@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { useTheme } from '@material-ui/core/styles';
-import { Box, Button, Card, Typography  } from '@material-ui/core';
+import React from 'react';
+import { Box, Button } from '@material-ui/core';
 import {
   DataUsageOutlined,
   SecurityOutlined,
@@ -39,7 +37,6 @@ const attributeList = [
 
 function Home() {
   const classes = useStyles();
-  const theme = useTheme();
   
   return (
     <Box className={classes.homeContent}>
@@ -47,7 +44,7 @@ function Home() {
         <Box display='flex' justifyContent='flex-end'>
           <Button
             type="button"
-            variant="contained" 
+            variant="contained"
             color="primary"
             className={classes.button}
           >
@@ -72,7 +69,7 @@ function Home() {
       </Box>
       <Footer />
     </Box>
-  )
+  );
 }
 
 export default Home;

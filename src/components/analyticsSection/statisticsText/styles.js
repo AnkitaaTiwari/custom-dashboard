@@ -15,6 +15,6 @@ const useStyles = makeStyles((theme) => {
       fontSize: theme.spacing(1.4),
     },
   });
-})
+});
 
 export default useStyles;

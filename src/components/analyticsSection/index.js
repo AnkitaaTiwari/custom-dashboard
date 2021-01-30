@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Card, Divider, Typography } from '@material-ui/core';
-import DateRange from '../dateRange';
+import { Box, Card, Divider, Typography, TextField, InputAdornment,  } from '@material-ui/core';
+import { DateRange as DateRangeIcon } from '@material-ui/icons';
+// import DateRange from '../dateRange';
 import StatisticsText from './statisticsText';
 import Graph from '../graph';
 import useStyles from './styles';
@@ -23,7 +24,7 @@ const statistics = [
     numbers: '0',
     name: 'Attribute 3',
   }
-]
+];
 
 function AnalyticsSection() {
   const classes = useStyles();
@@ -38,14 +39,26 @@ function AnalyticsSection() {
             </Typography>
           </Box>
           <Box className={classes.rangeSelectorWrapper}>
-            <DateRange />
+            <TextField
+              size="small"
+              variant="outlined"
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment className={classes.dateContainer} position="start">
+                    <DateRangeIcon />
+                  </InputAdornment>
+                ),
+              }}
+              value="Tue, Aug 29, 2020 - Wed, Aug 30, 2020"
+            />
+            {/* <DateRange /> */}
           </Box>
         </Box>
         <Box className={classes.statisticsContainer}>
           {
             statistics.map((record, key) => (
-              <Box className={classes.statisticsWrapper}>
-                <StatisticsText key={record.name} numbers={record.numbers} name={record.name} />
+              <Box key={record.name} className={classes.statisticsWrapper}>
+                <StatisticsText numbers={record.numbers} name={record.name} />
                 {(key < statistics.length - 1) && (
                   <Divider className={classes.divider} orientation='vertical' />
                 )}
@@ -58,7 +71,7 @@ function AnalyticsSection() {
         </Box>
       </Box>
     </Card>
-  )
+  );
 }
 
 export default AnalyticsSection;

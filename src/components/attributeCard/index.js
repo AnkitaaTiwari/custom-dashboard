@@ -22,7 +22,7 @@ function AttributeCard({ title, subtitle, icon }) {
         </Box>
       </Box>
     </Card>
-  )
+  );
 }
 
 AttributeCard.propTypes = {
